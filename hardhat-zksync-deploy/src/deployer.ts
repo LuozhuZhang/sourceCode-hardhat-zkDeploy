@@ -54,10 +54,10 @@ export class Deployer {
      *
      * @throws Throws an error if an artifact was not compiled by `zksolc`.
      */
-    // * 将被部署到合约传入，确认合约可以被zksolc编译，而不是solc和vyper
+    // * 将部署合约传入，确认合约可以被zksolc编译，而不是solc和vyper
     // * zksolc可以单独封装为一个工具，之后有兴趣可以研究一下：https://github.com/matter-labs/hardhat-zksync/tree/main/packages/hardhat-zksync-solc
 
-    // * 将被部署到合约传入，确认合约可以被zksolc编译，而不是solc和vyper
+    // * Pass in the deployment contract and confirm that the contract can be compiled by zksolc instead of solc and vyper
     // * Zksolc can be individually packaged as a tool, and you can study it later if you are interested：https://github.com/matter-labs/hardhat-zksync/tree/main/packages/hardhat-zksync-solc
     public async loadArtifact(contractNameOrFullyQualifiedName: string): Promise<ZkSyncArtifact> {
         const artifact = await this.hre.artifacts.readArtifact(contractNameOrFullyQualifiedName);
